@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+*{
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/* index.html */
+
+.main-title{
+    text-align: center;
+    margin-top: 15%;
+}
+
+.main-p {
+    text-align: center;
+    font-size: larger;
+    padding: 10px 20% 0 20%;
+}
+
+/* create.html */
+
+.create-main{
+    margin-top: 3%;
+}
+
+.create-form{
+    padding: 0 20% 0 20%; ;
+}
+
+#product-detail{
+    resize: none;
+}
+
+/* Buttons */
+
+/* .start-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.submit-button{
+    margin-top: 10px;
+}
+
