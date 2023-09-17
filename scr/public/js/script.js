@@ -5,10 +5,14 @@ let submit = document.querySelector('#submitCreate');
 submit.addEventListener('click', function(){
     let productImage = document.querySelector('#productImage');
     let productName = document.querySelector('#productName');
-    let productPrice = document.querySelector('#productPrice');
+    // let productPrice = document.querySelector('#productPrice');
     let productDetail = document.querySelector('#productDetail');
 
-    window.location.href = `adding/${productImage}/${productName.value}/${productPrice.value}/${productDetail.value}`;
+    // window.location.href = `adding/${productImage.value}/${productName.value}/${productPrice.value}/${productDetail.value}`;
+
+    window.location.href = `adding/${productImage.value}/${productName.value}/${productDetail.value}`;
+
+
 
 });
 
