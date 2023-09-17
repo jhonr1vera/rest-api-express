@@ -3,28 +3,13 @@
 let submit = document.querySelector('#submitCreate');
 
 submit.addEventListener('click', function(){
-    let productImage = document.querySelector('#productImage');
+    // let productName = document.querySelector('#productImage');
     let productName = document.querySelector('#productName');
-    // let productPrice = document.querySelector('#productPrice');
+    let productPrice = document.querySelector('#productPrice');
     let productDetail = document.querySelector('#productDetail');
 
-    // window.location.href = `adding/${productImage.value}/${productName.value}/${productPrice.value}/${productDetail.value}`;
-
-    window.location.href = `adding/${productImage.value}/${productName.value}/${productDetail.value}`;
-
-
-
+    window.location.href = `adding/${productName.value}/${productPrice.value}/${productDetail.value}`;
 });
-
-//     let productImage = document.querySelector('#productImage');
-//     let productName = document.querySelector('#productName');
-//     let productPrice = document.querySelector('#productPrice');
-//     let productDetail = document.querySelector('#productDetail');
-//     let submit = document.querySelector('#submitCreate');
-
-// submit.addEventListener('click', function(){
-//     window.location.href = `adding/${productImage.value}/${productName.value}/${productPrice.value}/${productDetail.value}`;
-// });
 
 
 // const formElement = document.getElementById("create-element-form");
