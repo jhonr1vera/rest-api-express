@@ -17,27 +17,29 @@
 
         <div class="create-form col-sm-12">
 
-            <div class="mb-3">
+          <form action="/adding" method="post">
+            <!-- <div class="mb-3">
               <label for="productImage" class="form-label">Product Image</label>
               <input type="file" class="form-control" id="productImage" accept="image/*">
-            </div>
+            </div> -->
 
               <label for="productName">Product Name</label>
-              <input type="text" class="form-control" id="productName" rows="1" placeholder=" ">
+              <input type="text" class="form-control" id="productName" rows="1" placeholder=" " name="productName">
 
               <label for="productPrice">Product Price</label>
                 <div class="input-group">
-                  <input type="number" step="any" class="form-control" id="productPrice" rows="1" placeholder="00.00" placeholder=" ">
+                  <input type="number" step="any" class="form-control" id="productPrice" rows="1" placeholder="00.00" placeholder=" " name="productPrice">
                     <div class="input-group-append">
                       <span class="input-group-text">$</span>
                     </div>
                 </div>
 
               <label for="productDetail">Product Details</label>
-              <textarea class="form-control" id="productDetail" rows="3" placeholder=" "></textarea>
+              <textarea class="form-control" id="productDetail" rows="3" placeholder=" " name="productDetail"></textarea>
 
               <button type="submit" class="submit-button btn btn-primary" id="submitCreate">Submit</button>
 
+          </form>
         </div>
 
     <!-- Bootstrap scripts -->

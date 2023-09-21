@@ -1,15 +1,14 @@
 // create.html
 
-let submit = document.querySelector('#submitCreate');
+// let submit = document.querySelector('#submitCreate');
 
-submit.addEventListener('click', function(){
-    // let productName = document.querySelector('#productImage');
-    let productName = document.querySelector('#productName');
-    let productPrice = document.querySelector('#productPrice');
-    let productDetail = document.querySelector('#productDetail');
+// submit.addEventListener('click', function(){
+//     let productName = document.querySelector('#productName');
+//     let productPrice = document.querySelector('#productPrice');
+//     let productDetail = document.querySelector('#productDetail');
 
-    window.location.href = `adding/${productName.value}/${productPrice.value}/${productDetail.value}`;
-});
+//     window.location.href = `adding/${productName.value}/${productPrice.value}/${productDetail.value}`;
+// });
 
 
 // const formElement = document.getElementById("create-element-form");
