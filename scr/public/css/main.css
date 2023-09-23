@@ -18,20 +18,26 @@
     padding: 10px 20% 0 20%;
 }
 
-/* create.html */
+/* create.ejs */
 
 .create-main{
     margin-top: 3%;
 }
 
 .create-form{
-    padding: 0 20% 0 20%; ;
+    padding: 20px 20% 0 20%; ;
 }
 
-#product-detail{
+#productDetail{
     resize: none;
 }
 
+/* products.ejs */
+
+.product-list{
+    align-content: center;
+    padding: 20px 10% 0 10%;
+}
 /* Buttons */
 
 /* .start-button{
