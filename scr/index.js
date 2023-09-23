@@ -1,10 +1,11 @@
 const express = require('express');
 const morgan = require('morgan'); //to see connection
 const path = require('path');
-
+const controller = require('../scr/controllers/controllers');
 // db
 const db = require('../config/mysql_db.js');
 const {connectToDatabase, connector } = require('../config/mysql_db.js');
+
 
 // ADVICE!!!:
 // const myConnection = require('express-myconnection'); tentativo
@@ -32,27 +33,7 @@ app.use('/api', require('./routes/products'));
 app.get('/', function(req, res){
   res.render('index.ejs');
 });
-
-app.post('/adding', (req, res) => {
-  const { productName, productPrice, productDetail } = req.body;
-
-  const query = `INSERT INTO new_product (product_name, product_price, product_detail) VALUES ('${productName}', ${productPrice}, '${productDetail}')`;
-
-  connector.query(query, [productName, productPrice, productDetail], (error, results) => {
-    if (error) {
-      console.log(error);
-      res.status(500).json({ message: 'There was an error inserting data' });
-    } else {
-      res.status(200).json({
-        message: 'Data added correctly',
-        product: {
-          productName,
-          productPrice,
-          productDetail
-        }});
-    }
-  });
-})
+app.post('/adding', controller.save)
 
 //server on
   app.listen(3000, () => {

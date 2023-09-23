@@ -1,6 +1,5 @@
-const { Router } = require('express');
+const { Router } = require('express'); //llama la funcion router
 const router = Router();
-// const imageController = require('../controllers/imageControllers'); //testingss
 const controller = require('../controllers/controllers');
 const { addProduct, connectToDatabase } = require('../../config/mysql_db');
 
@@ -8,23 +7,14 @@ const { addProduct, connectToDatabase } = require('../../config/mysql_db');
 router.get('/create', function(req, res){
     res.render('create.ejs');
 });
+// product list endpoint
+router.get('/products', controller.list);
 
+// edit-delete endpoint
+router.get('/edit/:product_id', controller.edit); //Obtain data from the id
+router.post('/edit/update/:product_id', controller.update); //update data from id
 
-// router.get('/adding/:productName/:productPrice/:productDetail', function(req, res){
-//     // let productImage = req.params.productImage;
-//     let productName = req.params.productName;
-//     let productPrice = req.params.productPrice;
-//     let productDetail = req.params.productDetail;
-//     // addProduct(productName, productPrice, productDetail);
-//     res.redirect('/api/create');
-//     console.log( productName, productPrice, productDetail);
-// });
-
-router.get('/products', function(req, res){
-    res.render('products.ejs')
-} )
-
-
+router.get('/delete/:product_id', controller.delete);
 //#region endpoints
 
 // router.get('/adding/:productImage/:productName/:productPrice/:productDetail', async function(req, res){
