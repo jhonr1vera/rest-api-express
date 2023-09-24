@@ -1,2 +1,10 @@
 # rest-api-express
-Management web app
+
+WEB APPLICATION FOR PRODUCT MANAGEMENT
+
+Technologies:
+NodeJS Express (including dependencies)
+MySQL
+JavaScript
+Html
+CSS
