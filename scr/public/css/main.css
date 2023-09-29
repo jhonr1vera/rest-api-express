@@ -1,18 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 *{
     padding: 0;
-    font-family: 'Noto Sans', sans-serif;
+    /* font-family: 'Noto Sans', sans-serif; */
+    font-family: 'Poppins', sans-serif;
 }
 
 /* index.html */
 
+/* .header-background::before{ TEMPORAL
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url(../img/principalbackground.jpg);
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    z-index: -1;
+} */
+
 .main-title{
     text-align: center;
     margin-top: 15%;
+    /* color: white; */
 }
 
 .main-p {
+    /* color: white; */
     justify-content: center;
     text-align: center;
     font-size: larger;
@@ -41,15 +58,4 @@
     /* padding: 20px 10% 0 10%; */
 };
 
-/* Buttons */
-
-/* .start-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .submit-button{
-    margin-top: 30px;
-} */
-
+/* article */

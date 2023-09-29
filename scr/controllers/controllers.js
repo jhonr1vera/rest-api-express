@@ -6,10 +6,20 @@ controller.list = (req, res) => {
         let sql = 'SELECT * FROM new_product';
         connector.query(sql, (err, results) => {
             if(err) throw err;
-            res.render('products.ejs', { results })
+            res.render('products.ejs', {title : "Product list", results })
             // console.log(results)
         });
 };
+
+// controller.search = (req, res) => { funcion searh endpoint
+//   connector.query('SELECT * FROM new_product', (err, results) => {
+//       if(err) throw err;
+//       res.json(results)
+//       data = JSON.stringify();
+//       res.send
+//       // console.log(results)
+//   });
+// }
 
 controller.save = (req, res) => {
     const data = req.body;
@@ -42,7 +52,7 @@ controller.edit = (req, res) => {
             console.log(error);
             res.status(500).json('An error occurred');
         } else {
-            res.render('edit.ejs', {data : results[0]});
+            res.render('edit.ejs', {title : "Product edit", data : results[0]});
         }
     });
 };
@@ -70,7 +80,6 @@ controller.update = (req, res) => {
       });
  };
 
-
 controller.delete = (req, res) => {
     const {product_id} = req.params;
     // const query = ;
@@ -83,6 +92,20 @@ controller.delete = (req, res) => {
             res.status(200).json('data deleted');
         }
     });
+};
+
+controller.select = (req, res) => {
+  const {product_id} = req.params;
+  const query = `SELECT * FROM new_product WHERE product_id = ?`;
+
+  connector.query(query, [product_id], (error, results) => {
+      if (error) {
+          console.log(error);
+          res.status(500).json('An error occurred');
+      } else {
+          res.render('article.ejs', {title : "Product", data : results[0]});
+      }
+  });
 };
 
 module.exports = controller;

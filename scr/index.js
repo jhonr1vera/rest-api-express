@@ -6,12 +6,9 @@ const controller = require('../scr/controllers/controllers');
 const db = require('../config/mysql_db.js');
 const {connectToDatabase, connector } = require('../config/mysql_db.js');
 
-
 // ADVICE!!!:
 // const myConnection = require('express-myconnection'); tentativo
 // cors is installed, tentativo
-// multer
-// public/img
 
 const app = express();
 
@@ -29,9 +26,9 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, '/public')))
 
 // routes
-app.use('/api', require('./routes/products'));
+app.use('/api', require('./routes/routes'));
 app.get('/', function(req, res){
-  res.render('index.ejs');
+  res.render('index.ejs', {title : "Product Management"});
 });
 app.post('/adding', controller.save)
 
