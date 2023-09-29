@@ -1,0 +1,23 @@
+<%- include('./partials/head'); %>
+<body>
+
+  <header>
+    <%- include('./partials/header'); %>
+  </header>
+
+  <div class="container article-container">
+    <div class="row">
+      <div class="images col-sm-12 col-md-8 col-lg-8 col-xl-8">
+
+      </div>
+      <div class="data col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <p>Nuevo</p>
+        <h4 style="margin-top: 5px;"><b><%= data.product_name %></b></h4>
+        <h1 style="margin-top: 50px;">U$S <%= data.product_price %></h1>
+        <h4 style="margin-top: 50px;"><%= data.product_detail %></h4>
+      </div>
+  </div>
+
+  </div>
+
+  <%- include('./partials/footer'); %>
