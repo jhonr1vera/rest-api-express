@@ -1,13 +1,12 @@
 // MySql
-
+require('dotenv').config();
 const mysql = require('mysql');
 
 const connector = mysql.createConnection({
-    host: 'localhost',
-    password: 'password',
-    user: 'rootuser',
-    database: 'projectmanagement_db'
-
+    host: process.env.DB_HOST,
+    password: process.env.DB_PASSWORD,
+    user: process.env.DB_USER,
+    database: process.env.DB_NAME
 });
 
 const connectToDatabase = ( ) => {
@@ -15,7 +14,7 @@ const connectToDatabase = ( ) => {
         if(err)
             throw err;
         else
-            console.log('Conexion asegurada');
+            console.log('Secure');
 
     });
 };

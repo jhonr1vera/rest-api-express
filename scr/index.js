@@ -5,7 +5,6 @@ const path = require('path');
 const controller = require('../scr/controllers/controllers');
 const storage = require('../config/multer');
 const uploader = multer({storage});
-
 // db
 const db = require('../config/mysql_db.js');
 const {connectToDatabase, connector } = require('../config/mysql_db.js');
@@ -16,8 +15,6 @@ const {connectToDatabase, connector } = require('../config/mysql_db.js');
 // const cors = require('cors')
 
 const app = express();
-
-// app.use(cors()); //mientras
 
 // settings
 app.set('port', process.env.PORT || 3000);
