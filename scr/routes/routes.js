@@ -1,7 +1,11 @@
 const { Router } = require('express'); //llama la funcion router
 const router = Router();
 const controller = require('../controllers/controllers');
-const { addProduct, connectToDatabase } = require('../../config/mysql_db');
+const { connectToDatabase } = require('../../config/mysql_db');
+const  multer = require('multer')
+const storage = require('../../config/multer');
+const uploader = multer({storage});
+
 
 // create endpoint
 router.get('/create', function(req, res){
@@ -13,7 +17,7 @@ router.get('/products', controller.list);
 
 // edit-delete endpoint
 router.get('/edit/:product_id', controller.edit); //Obtain data from the id
-router.post('/edit/update/:product_id', controller.update); //update data from id
+router.post('/edit/update/:product_id', storage.single('file'), controller.update); //update data from id
 router.get('/delete/:product_id', controller.delete);
 
 // search
