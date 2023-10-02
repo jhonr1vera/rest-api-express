@@ -10,11 +10,11 @@
 
         <h2>Product Form</h2>
 
-        <form action="update/<%= data.product_id %>" method="post">
-          <!-- <div class="mb-3">
+        <form action="update/<%= data.product_id %>" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
             <label for="productImage" class="form-label">Product Image</label>
-            <input type="file" class="form-control" id="productImage" accept="image/*">
-          </div> -->
+            <input name="file" type="file" class="form-control" id="productImage" accept="image/*" required value="<%= data.product_img %>">
+          </div>
 
             <label for="productName">Product Name</label>
             <input type="text" class="form-control" id="productName" rows="1" name="productName" value="<%= data.product_name %>">

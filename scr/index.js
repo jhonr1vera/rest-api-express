@@ -1,7 +1,11 @@
 const express = require('express');
-const morgan = require('morgan'); //to see connection
+const morgan = require('morgan');
+const multer = require( 'multer'); //to see connection
 const path = require('path');
 const controller = require('../scr/controllers/controllers');
+const storage = require('../config/multer');
+const uploader = multer({storage});
+
 // db
 const db = require('../config/mysql_db.js');
 const {connectToDatabase, connector } = require('../config/mysql_db.js');
@@ -9,8 +13,11 @@ const {connectToDatabase, connector } = require('../config/mysql_db.js');
 // ADVICE!!!:
 // const myConnection = require('express-myconnection'); tentativo
 // cors is installed, tentativo
+// const cors = require('cors')
 
 const app = express();
+
+// app.use(cors()); //mientras
 
 // settings
 app.set('port', process.env.PORT || 3000);
@@ -30,7 +37,7 @@ app.use('/api', require('./routes/routes'));
 app.get('/', function(req, res){
   res.render('index.ejs', {title : "Product Management"});
 });
-app.post('/adding', controller.save)
+app.post('/adding', storage.single('file'), controller.save)
 
 //server on
   app.listen(3000, () => {
