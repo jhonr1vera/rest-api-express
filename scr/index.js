@@ -10,7 +10,7 @@ const db = require('../config/mysql_db.js');
 const {connectToDatabase, connector } = require('../config/mysql_db.js');
 
 // ADVICE!!!:
-// const myConnection = require('express-myconnection'); tentativo
+// const myConnection = require('express-myconnection'); tentativoa
 // cors is installed, tentativo
 // const cors = require('cors')
 
