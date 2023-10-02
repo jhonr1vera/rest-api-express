@@ -9,7 +9,7 @@
 
 /* index.html */
 
-/* .header-background::before{ TEMPORAL
+/* .header-background::before{
     content: "";
     position: absolute;
     top: 0;
@@ -57,5 +57,3 @@
     padding-top: 15px;
     /* padding: 20px 10% 0 10%; */
 };
-
-/* article */
