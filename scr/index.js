@@ -9,11 +9,6 @@ const uploader = multer({storage});
 const db = require('../config/mysql_db.js');
 const {connectToDatabase, connector } = require('../config/mysql_db.js');
 
-// ADVICE!!!:
-// const myConnection = require('express-myconnection'); tentativoa
-// cors is installed, tentativo
-// const cors = require('cors')
-
 const app = express();
 
 // settings
