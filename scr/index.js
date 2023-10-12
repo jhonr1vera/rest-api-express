@@ -33,6 +33,6 @@ app.post('/adding', storage.single('file'), controller.save)
 
 //server on
   app.listen(3000, () => {
-    console.log(`Server on port ${app.get('port')}`); //message concatened with app.set('port') in settings
+    console.log(`Server on port ${app.get('port')}`);
 });
 
