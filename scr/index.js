@@ -26,7 +26,8 @@ app.use(express.urlencoded({extended: true}));
 app.use( i18n({
   translationsPath: path.join(__dirname, '../locales'),
   siteLangs: ["en","es"],
-  textsVarName: 'translation'
+  textsVarName: 'translation',
+  defaultLocale: 'en' 
   }));
 
 //static files: css - js
