@@ -21,17 +21,12 @@
   <div class="container article-container">
     <div class="row">
       <div class="images col-sm-12 col-md-8 col-lg-8 col-xl-8">
-        <a class="back" href="/api/products">Back</a>
-        <%
-    var url = data.product_img;
-    var parts = url.split('/');
-    var name = parts[parts.length - 1];
-        %>
-<img class="article_img" src="/img/<%= name %>" alt="">
+        <a class="back" href="/api/products"><%=translation.BACK_ART%></a>
+      <img class="article_img" src="" alt="">
 
       </div>
       <div class="data border col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <p style="margin-top: 9px;" >New</p>
+        <p style="margin-top: 9px;" ><%=translation.NEW_ART%></p>
         <h4 style="margin-top: 5px;"><b><%= data.product_name %></b></h4>
         <hr>
         <h1 style="margin-top: 20px;">U$S <%= data.product_price %></h1>
@@ -40,5 +35,18 @@
   </div>
 
   </div>
+
+<script>
+  var imageData = "<%= data.product_img %>";
+
+  function setImageSource(data) {
+    var url = data;
+    var parts = url.split('/');
+    var name = parts[parts.length - 1];
+    document.querySelector('.article_img').src = "/img/" + name;
+  }
+
+  setImageSource(imageData);
+</script>
 
   <%- include('./partials/footer'); %>
