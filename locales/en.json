@@ -1,0 +1,35 @@
+{
+    "PAGE_TITLE": "Product Management",
+
+    "SITE_NAME": "Product Management",
+    "NAV_LIST": "Product List",
+    "NAV_PRODUCT": "New Product",
+
+    "INDEX_TITLE": "Product Management",
+    "INDEX_PARAGRAPH": "Product Management is a web-based management application for companies. This application will significantly improve and facilitate your product sales procedures, boosting your company's market reach.",
+    "INDEX_BUTTON": "Start here",
+
+    "BACK_ART": "Back",
+    "NEW_ART": "New",
+
+    "TITLE_FORM_CREATE": "Product Form",
+    "SUBMIT_CREATE": "Submit",
+
+    "IMAGE_FORM": "Product Image",
+    "NAME_FORM": "Product Name",
+    "PRICE_FORM": "Product Price",
+    "DETAIL_FORM": "Product Detail",
+
+    "SUBMIT_EDIT": "Edit product",
+
+    "ID_LIST": "ID",
+    "NAME_LIST": "Name",
+    "PRICE_LIST": "Price",
+    "DETAIL_LIST": "Detail",
+    "OPERATION_LIST": "Operations",
+
+    "DELETE_SCRIPT_TITLE": "Are you sure?",
+    "DELETE_SCRIPT_TEXT": "You will not be able to revert this!",
+    "DELETE_SCRIPT_CONFIRM": "Yes, delete it!",
+    "DELETE_SCRIPT_CANCEL": "No, cancel!"
+}
