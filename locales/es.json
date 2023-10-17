@@ -1,5 +1,9 @@
 {
     "PAGE_TITLE": "Gestor de Productos",
+    "ART_TITLE": "Producto",
+    "EDIT_TITLE": "Editar producto",
+    "NEWP_TITLE": "Nuevo producto",
+    "PRODUCTS_TITLE": "Lista de productos",
 
     "SITE_NAME": "Gestor de Productos",
     "NAV_LIST": "Lista de Productos",

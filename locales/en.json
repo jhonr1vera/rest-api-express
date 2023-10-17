@@ -1,12 +1,16 @@
 {
-    "PAGE_TITLE": "Product Management",
+    "PAGE_TITLE": "Product Manager",
+    "ART_TITLE": "Product",
+    "EDIT_TITLE": "Edit product",
+    "NEWP_TITLE": "New product",
+    "PRODUCTS_TITLE": "Product List",
 
-    "SITE_NAME": "Product Management",
+    "SITE_NAME": "Product Manager",
     "NAV_LIST": "Product List",
     "NAV_PRODUCT": "New Product",
 
-    "INDEX_TITLE": "Product Management",
-    "INDEX_PARAGRAPH": "Product Management is a web-based management application for companies. This application will significantly improve and facilitate your product sales procedures, boosting your company's market reach.",
+    "INDEX_TITLE": "Product Manager",
+    "INDEX_PARAGRAPH": "Product Manager is a web-based management application for companies. This application will significantly improve and facilitate your product sales procedures, boosting your company's market reach.",
     "INDEX_BUTTON": "Start here",
 
     "BACK_ART": "Back",
