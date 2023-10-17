@@ -17,7 +17,7 @@ CRUD app for products (en - es)
 npm i --yes
 ```  
   
-2. **You will need an user and a db in MySQL (XAMMP). Use a .env file to enter the database data, you will find a .env.example file with the variables needed**
+2. **You will need an user and a database in MySQL (XAMMP) and connect it. Use a .env file to enter the database data, you will find a .env.example file with the variables needed and some instructions**. 
 
 3. **Run server in terminal**
 ```
