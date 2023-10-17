@@ -1,4 +1,4 @@
-const { Router } = require('express'); //llama la funcion router
+const { Router } = require('express');
 const router = Router();
 const controller = require('../controllers/controllers');
 const { connectToDatabase } = require('../../config/mysql_db');
@@ -19,8 +19,6 @@ router.get('/products', controller.list);
 router.get('/edit/:product_id', controller.edit); //Obtain data from the id
 router.post('/edit/update/:product_id', storage.single('file'), controller.update); //update data from id
 router.get('/delete/:product_id', controller.delete);
-
-// search
 
 // select
 router.get('/article/:product_id', controller.select);
