@@ -9,7 +9,7 @@ const uploader = multer({storage});
 
 // create endpoint
 router.get('/create', function(req, res){
-    res.render('create.ejs', {title : "New Product"});
+    res.render('create.ejs');
 });
 
 // product list endpoint

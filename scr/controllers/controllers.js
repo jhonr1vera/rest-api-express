@@ -8,7 +8,7 @@ controller.list = (req, res) => {
         let sql = 'SELECT * FROM new_product';
         connector.query(sql, (err, results) => {
             if(err) throw err;
-            res.render('products.ejs', {title : "Product list", results })
+            res.render('products.ejs', { results })
             // console.log(results)
         });
 };
@@ -50,7 +50,7 @@ controller.edit = (req, res) => {
             console.log(error);
             res.status(500).json('An error occurred');
         } else {
-            res.render('edit.ejs', {title : "Product edit", data : results[0]});
+            res.render('edit.ejs', {data : results[0]});
         }
     });
 };
@@ -106,7 +106,7 @@ controller.select = (req, res) => {
           console.log(error);
           res.status(500).json('An error occurred');
       } else {
-        res.render('article.ejs', {title : "Product", data : results[0] });
+        res.render('article.ejs', { data : results[0] });
       }
   });
 };
