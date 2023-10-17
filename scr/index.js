@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, '/public')))
 // routes
 app.use('/api', require('./routes/routes'));
 app.get('/', function(req, res){
-  res.render('index.ejs', {title : "Product Management"});
+  res.render('index.ejs');
 });
 app.post('/adding', storage.single('file'), controller.save)
 
