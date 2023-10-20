@@ -23,4 +23,4 @@ router.get('/delete/:product_id', controller.delete);
 // select
 router.get('/article/:product_id', controller.select);
 
-module.exports = router; // Enables routing of routes
+module.exports = router;
