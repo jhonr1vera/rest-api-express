@@ -35,5 +35,18 @@
     "DELETE_SCRIPT_TITLE": "¿Estás seguro?",
     "DELETE_SCRIPT_TEXT": "¡No podrás revertirlo!",
     "DELETE_SCRIPT_CONFIRM": "Si, ¡eliminalo!",
-    "DELETE_SCRIPT_CANCEL": "No, !cancela!"
+    "DELETE_SCRIPT_CANCEL": "No, !cancela!",
+
+
+    "There was an error inserting data": "Hubo un error al insertar los datos",
+    "Data added correctly": "Datos añadidos correctamente",
+    "Missing required data": "Faltan datos requeridos",
+    "An error occurred": "Ocurrió un error",
+    "There was an error updating data": "Hubo un error al actualizar los datos",
+    "Data updated correctly": "Datos actualizados correctamente",
+    "Data deleted": "Datos eliminados"
+    
+    
+  
 }
+  

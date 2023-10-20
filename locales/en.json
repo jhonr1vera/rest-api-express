@@ -35,5 +35,15 @@
     "DELETE_SCRIPT_TITLE": "Are you sure?",
     "DELETE_SCRIPT_TEXT": "You will not be able to revert this!",
     "DELETE_SCRIPT_CONFIRM": "Yes, delete it!",
-    "DELETE_SCRIPT_CANCEL": "No, cancel!"
+    "DELETE_SCRIPT_CANCEL": "No, cancel!",
+
+
+    "There was an error inserting data": "There was an error inserting data",
+    "Data added correctly": "Data added correctly",
+    "Missing required data": "Missing required data",
+    "An error occurred": "An error occurred",
+    "There was an error updating data": "There was an error updating data",
+    "Data updated correctly": "Data updated correctly",
+    "Data deleted": "Data deleted"
+
 }
