@@ -1,0 +1,57 @@
+
+
+<style>
+  .article_img{
+    width:100%;
+    max-width:900px;
+    height: auto;
+    margin-top: 15px;
+    }
+
+    .article-container{
+      margin-top: 30px;
+    }
+</style>
+<%- include('./partials/head'); %>
+
+<title><%=translation.ART_TITLE%></title>
+</head>
+
+<body>
+
+  <header>
+    <%- include('./partials/header'); %>
+  </header>
+
+  <div class="container article-container">
+    <div class="row">
+      <div class="images col-sm-12 col-md-8 col-lg-8 col-xl-8">
+        <a class="back" href="/api/products"><%=translation.BACK_ART%></a>
+      <img class="article_img" src="" alt="">
+
+      </div>
+      <div class="data border col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <p style="margin-top: 10px;" ><%=translation.NEW_ART%></p>
+        <h4 style="margin-top: 5px;"><b><%= data.product_name %></b></h4>
+        <hr>
+        <h1 style="margin-top: 20px;">U$S <%= data.product_price %></h1>
+        <h4 style="margin-top: 30px;"><%= data.product_detail %></h4>
+      </div>
+  </div>
+
+  </div>
+
+<script>
+  var imageData = "<%= data.product_img %>";
+
+  function setImageSource(data) {
+    var url = data;
+    var parts = url.split('/');
+    var name = parts[parts.length - 1];
+    document.querySelector('.article_img').src = "/img/" + name;
+  }
+
+  setImageSource(imageData);
+</script>
+
+  <%- include('./partials/footer'); %>

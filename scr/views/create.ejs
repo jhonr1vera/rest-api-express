@@ -1,0 +1,40 @@
+<%- include('./partials/head'); %>
+<title><%=translation.NEWP_TITLE%></title>
+</head>
+<body>
+
+  <header>
+  <%- include('./partials/header'); %>
+  </header>
+
+        <div class="create-form general-size col-sm-12">
+
+          <h2><%=translation.TITLE_FORM_CREATE%></h2>
+
+          <form action="/adding" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="productImage" class="form-label"><%=translation.IMAGE_FORM%></label>
+              <input name="file" type="file" class="form-control" id="productImage" accept="image/*" required>
+            </div>
+
+              <label for="productName"><%=translation.NAME_FORM%></label>
+              <input type="text" class="form-control" id="productName" rows="1" name="productName" required>
+
+              <label for="productPrice"><%=translation.PRICE_FORM%></label>
+                <div class="input-group">
+                  <input type="number" step="any" class="form-control" id="productPrice" rows="1" placeholder="00.00" name="productPrice" required>
+                    <div class="input-group-append">
+                      <span class="input-group-text">$</span>
+                    </div>
+                </div>
+
+              <label for="productDetail"><%=translation.DETAIL_FORM%></label>
+              <textarea class="form-control" id="productDetail" rows="3" name="productDetail" required></textarea>
+
+              <button type="submit" class="submit-button btn btn-primary" id="submitCreate" style="margin-top: 10px;"><%=translation.SUBMIT_CREATE%></button>
+
+          </form>
+        </div>
+
+<%- include('./partials/footer'); %>
+
