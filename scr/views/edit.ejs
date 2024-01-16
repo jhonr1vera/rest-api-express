@@ -12,7 +12,7 @@
 
         <h2><%=translation.TITLE_FORM_CREATE%></h2>
 
-        <form action="update/<%= data.product_id %>" method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" id="editForm">
           <div class="mb-3">
             <label for="productImage" class="form-label"><%=translation.IMAGE_FORM%></label>
             <input name="file" type="file" class="form-control" id="productImage" accept="image/*" required value="<%= data.product_img %>">
@@ -37,5 +37,47 @@
         </form>
       </div>
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+  let changeForm = document.getElementById('editForm');
+
+    changeForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let formData = new FormData(changeForm);
+
+    fetch('/api/edit/update/<%= data.product_id %>', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Error HTTP: ' + res.status);
+      }
+      return res.json();
+    })
+    .then(data => 
+      Swal.fire({
+        icon: "success",
+        title: "<%=translation.SUCCESS_EDIT%>"
+      }).then (result => {
+        if(result.isConfirmed){
+          window.location.replace('/api/article/<%= data.product_id %>');
+        }
+      }))
+    .catch(error => {
+      console.log(error);
+      Swal.fire({
+          icon: "error",
+          title: "<%=translation.ERROR_EDIT%>"
+      }).then (result => {
+          if(result.isConfirmed){
+              window.location.replace('/api/products');
+          }
+      })
+    });
+});
+  </script>
 
   <%- include('./partials/footer'); %>
