@@ -18,6 +18,8 @@
 
     "TITLE_FORM_CREATE": "Product Form",
     "SUBMIT_CREATE": "Submit",
+    "SUCCESS_CREATE": "Product created successfully",
+    "ERROR_CREATE": "Error creating the product",
 
     "IMAGE_FORM": "Product Image",
     "NAME_FORM": "Product Name",
@@ -25,6 +27,8 @@
     "DETAIL_FORM": "Product Detail",
 
     "SUBMIT_EDIT": "Edit product",
+    "SUCCESS_EDIT": "Product edited successfully",
+    "ERROR_EDIT": "Error editing the product",
 
     "ID_LIST": "ID",
     "NAME_LIST": "Name",
@@ -36,6 +40,8 @@
     "DELETE_SCRIPT_TEXT": "You will not be able to revert this!",
     "DELETE_SCRIPT_CONFIRM": "Yes, delete it!",
     "DELETE_SCRIPT_CANCEL": "No, cancel!",
+    "SUCCESS_DELETE": "Deleted successfully",
+    "ERROR_DELETE": "Error deleting the product",
 
 
     "There was an error inserting data": "There was an error inserting data",

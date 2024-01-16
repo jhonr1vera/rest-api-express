@@ -11,7 +11,7 @@
 
           <h2><%=translation.TITLE_FORM_CREATE%></h2>
 
-          <form action="/adding" method="post" enctype="multipart/form-data">
+          <form method="POST" enctype="multipart/form-data" id="addForm">
             <div class="mb-3">
               <label for="productImage" class="form-label"><%=translation.IMAGE_FORM%></label>
               <input name="file" type="file" class="form-control" id="productImage" accept="image/*" required>
@@ -31,10 +31,53 @@
               <label for="productDetail"><%=translation.DETAIL_FORM%></label>
               <textarea class="form-control" id="productDetail" rows="3" name="productDetail" required></textarea>
 
-              <button type="submit" class="submit-button btn btn-primary" id="submitCreate" style="margin-top: 10px;"><%=translation.SUBMIT_CREATE%></button>
+              <button type="submit" class="submit-button btn btn-primary" id="submitCreate" style="margin-top: 10px;" ><%=translation.SUBMIT_CREATE%></button>
 
           </form>
         </div>
 
-<%- include('./partials/footer'); %>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
 
+
+      let createForm = document.getElementById('addForm');
+
+      createForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  let formData = new FormData(createForm);
+
+  fetch('/adding', {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => {
+    if (!res.ok) {
+      throw new Error('Error HTTP: ' + res.status);
+    }
+    return res.json();
+  })
+  .then(data => 
+    Swal.fire({
+      icon: "success",
+      title: "<%=translation.SUCCESS_CREATE%>"
+    }).then (result => {
+      if(result.isConfirmed){
+        window.location.replace('/api/create');
+      }
+    }))
+  .catch(error => {
+    console.log(error);
+    Swal.fire({
+        icon: "error",
+        title: "<%=translation.ERROR_CREATE%>"
+    }).then (result => {
+        if(result.isConfirmed){
+            window.location.replace('/api/create');
+        }
+    })
+  });
+});
+  </script>
+
+<%- include('./partials/footer'); %>

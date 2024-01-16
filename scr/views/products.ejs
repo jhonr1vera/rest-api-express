@@ -24,7 +24,7 @@
                         <tr>
                           <td><%= result.product_id %></td>
                           <td><%= result.product_name %></td>
-                          <td><%= result.product_price %></td>
+                          <td><%= result.product_price %>$</td>
                           <td><%= result.product_detail %></td>
                           <td class="buttons col-xl-2" style="text-align: center;">
                             <a href="/api/article/<%= result.product_id %>" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
@@ -70,11 +70,35 @@ function confirmDelete(id){
         cancelButtonColor: '#d33',
         confirmButtonText: '<%= translation.DELETE_SCRIPT_CONFIRM%>',
         cancelButtonText: '<%= translation.DELETE_SCRIPT_CANCEL%>'
-      }).then((result) => {
+    }).then((result) => {
         if (result.isConfirmed) {
-            window.location = '/api/delete/'+id;
-        }
-      })
+
+            fetch('/api/delete/'+id, {method: 'GET'})
+              .then(res => {
+                if (!res.ok) {
+                  throw new Error('Error HTTP: ' + res.status);
+                }
+               return res.json()  
+            }).then(data => 
+                Swal.fire({
+                icon: "success",
+                title: "<%=translation.SUCCESS_DELETE%>"
+            }).then ((result) => {
+                if(result.isConfirmed){
+                    window.location.replace('/api/products');
+                }
+            })).catch(error => {
+              console.log(error);
+              Swal.fire({
+            icon: "error",
+            title: "<%=translation.ERROR_DELETE%>"
+          }).then ((result) => {
+              if(result.isConfirmed){
+                  window.location.replace('/');
+                }
+            })
+          })
+        }})
 }
     </script>
 
