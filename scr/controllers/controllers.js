@@ -6,12 +6,17 @@ const uploader = multer({storage});
 const {i18n} = require('../plugins/i18n-plugin'); 
 
 controller.list = (req, res) => {
-        let sql = 'SELECT * FROM new_product';
-        connector.query(sql, (err, results) => {
-            if(err) throw err;
+    let sql = 'SELECT * FROM new_product';
+    connector.query(sql, (err, results) => {
+        if(err) {
+            console.log(err);
+        }else{
             res.render('products.ejs', { results })
-        });
+        }
+        
+    });
 };
+
 
 controller.save = (req, res) => {
   const {body, file} = req;
@@ -24,23 +29,13 @@ controller.save = (req, res) => {
     i18n.init(req, res)  
     connector.query(sql, [body.productName, body.productPrice, body.productDetail, url], (err, results) => {
         if(err) {
-              res.status(500).json({ message: req.__('There was an error inserting data') });
+            res.status(500).json({ success: false, message: 'There was an error inserting data' });
           } else {
-              res.status(200).json({
-                  message: req.__('Data added correctly'),
-                  product: {
-                      productName: body.productName,
-                      productPrice: body.productPrice,
-                      productDetail: body.productDetail,
-                      productImage: url
-                  }
-              });
+            res.status(200).json({ success: true, message: 'Data added correctly' });
           }
-      });
-  } else {
-      res.status(400).json({ message: 'Missing required data' });
-  }
+      })}
 };
+
 
 controller.edit = (req, res) => {
     const {product_id} = req.params;
@@ -49,12 +44,14 @@ controller.edit = (req, res) => {
     connector.query(query, [product_id], (error, results) => {
         if (error) {
             console.log(error);
-            res.status(500).json(req.__('An error occurred'));
+            res.status(500).json({success: false, message: 'An error occurred'});
         } else {
             res.render('edit.ejs', {data : results[0]});
         }
     });
 };
+
+
 
 controller.update = (req, res) => {
     const {product_id} = req.params;
@@ -68,17 +65,9 @@ controller.update = (req, res) => {
     connector.query(sql, [data.productName, data.productPrice, data.productDetail, url, product_id ], (error, results) => {
         if (error) {
           console.log(error);
-          res.status(500).json({ message: req.__('There was an error updating data') });
+          res.status(500).json({ success: false, message: req.__('There was an error updating data')});
         } else {
-          res.status(200).json({
-            message: req.__('Data updated correctly'),
-            product: {
-              productName: data.productName,
-              productPrice: data.productPrice,
-              productDetail: data.productDetail,
-              productImage: url
-            }
-        });
+            res.status(200).json({ success: true, message: 'Data updated correctly' });
     }
       });
  };
@@ -90,9 +79,9 @@ controller.delete = (req, res) => {
     connector.query(`DELETE FROM new_product WHERE product_id = ?`, [product_id], (error, results) => {
         if (error) {
             console.log(error);
-            res.status(500).json(req.__('An error occurred'));
+            res.status(500).json({ success: false, message: req.__('An error occurred')});
         } else {
-            res.status(200).json(req.__('Data deleted'));
+            res.status(200).json({ success: true, message: 'Data deleted' });
         }
     });
 };
