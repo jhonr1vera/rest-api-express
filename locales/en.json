@@ -1,0 +1,55 @@
+{
+    "PAGE_TITLE": "Product Manager",
+    "ART_TITLE": "Product",
+    "EDIT_TITLE": "Edit product",
+    "NEWP_TITLE": "New product",
+    "PRODUCTS_TITLE": "Product List",
+
+    "SITE_NAME": "Product Manager",
+    "NAV_LIST": "Product List",
+    "NAV_PRODUCT": "New Product",
+
+    "INDEX_TITLE": "Product Manager",
+    "INDEX_PARAGRAPH": "Product Manager is a web-based management application for companies. This application will significantly improve and facilitate your product sales procedures, boosting your company's market reach.",
+    "INDEX_BUTTON": "Start here",
+
+    "BACK_ART": "Back",
+    "NEW_ART": "New",
+
+    "TITLE_FORM_CREATE": "Product Form",
+    "SUBMIT_CREATE": "Submit",
+    "SUCCESS_CREATE": "Product created successfully",
+    "ERROR_CREATE": "Error creating the product",
+
+    "IMAGE_FORM": "Product Image",
+    "NAME_FORM": "Product Name",
+    "PRICE_FORM": "Product Price",
+    "DETAIL_FORM": "Product Detail",
+
+    "SUBMIT_EDIT": "Edit product",
+    "SUCCESS_EDIT": "Product edited successfully",
+    "ERROR_EDIT": "Error editing the product",
+
+    "ID_LIST": "ID",
+    "NAME_LIST": "Name",
+    "PRICE_LIST": "Price",
+    "DETAIL_LIST": "Detail",
+    "OPERATION_LIST": "Operations",
+
+    "DELETE_SCRIPT_TITLE": "Are you sure?",
+    "DELETE_SCRIPT_TEXT": "You will not be able to revert this!",
+    "DELETE_SCRIPT_CONFIRM": "Yes, delete it!",
+    "DELETE_SCRIPT_CANCEL": "No, cancel!",
+    "SUCCESS_DELETE": "Deleted successfully",
+    "ERROR_DELETE": "Error deleting the product",
+
+
+    "There was an error inserting data": "There was an error inserting data",
+    "Data added correctly": "Data added correctly",
+    "Missing required data": "Missing required data",
+    "An error occurred": "An error occurred",
+    "There was an error updating data": "There was an error updating data",
+    "Data updated correctly": "Data updated correctly",
+    "Data deleted": "Data deleted"
+
+}

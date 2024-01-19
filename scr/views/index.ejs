@@ -1,0 +1,19 @@
+<%- include('./partials/head'); %>
+
+<title><%=translation.PAGE_TITLE%></title>
+</head>
+<body>
+
+  <header>
+    <%- include('./partials/header'); %>
+  </header>
+
+    <main class="col-sm-12 header-background">
+        <h1 class="main-title"><b><%=translation.INDEX_TITLE%></b></h1>
+        <p class="main-p col-sm-12"><%=translation.INDEX_PARAGRAPH%></p>
+        <div class="text-center">
+            <a href="/api/create"><button type="button" id="index-button" class="start-button btn btn-primary btn-lg"><%=translation.INDEX_BUTTON%></button></a>
+        </div>
+    </main>
+
+    <%- include('./partials/footer'); %>
